@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+.blue-group{
+	fill: blue;
+	stroke-width: 3;
+}
+
+.red-group{
+	fill: red;
+	stroke-width: 4;
+	font-weight: bold;
+}
+
+.green-group{
+	fill: green;
+	stroke-width: 2;
+	font-family: Arial;
+	fill-opacity: 0.5;
+}
+</style>
+<title>Insert title here</title>
+</head>
+<body>
+	<svg width="700px" height="500px">
+		<g class="blue-group">
+			<text x="0" y="20">Blue group</text>
+			<rect x="0" y="40" width="50" height="50" rx="10" ry="10" />
+			<polygon points="80,30 70,70 130,50"/>
+			<line x1="60" y1="75" x2="120" y2="90" stroke="blue"/>
+		</g>
+		
+		<g class="red-group">
+			<text x="200" y="20">Red group</text>
+			<rect x="200" y="40" width="50" height="50" rx="10" ry="10" />
+			<polygon points="280,30 270,70 330,50"/>
+			<line x1="260" y1="75" x2="320" y2="90" stroke="red"/>
+		</g>
+		
+		<g class="green-group">
+			<text x="400" y="20">Green group</text>
+			<rect x="400" y="40" width="50" height="50" rx="10" ry="10" />
+			<polygon points="480,30 470,70 530,50"/>
+			<line x1="460" y1="75" x2="520" y2="90" stroke="green"/>
+		</g>
+	</svg>
+</body>
+</html>
