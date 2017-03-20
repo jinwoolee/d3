@@ -31,8 +31,8 @@ svg{
 .bar-label{
 	text-anchor: end;
 }
-.axis-abel{
-	text-anchor: end;
+.axis-label{
+	text-anchor: middle;
 	font-size: 13px;
 }
 </style>
@@ -40,7 +40,7 @@ svg{
 </head>
 <body>
 	<h2>Age distribution of the world, 2010</h2>
-	<div class="top-label">
+	<div class="top-label age-label">
 		<p>age group</p>
 	</div>
 	<div class="top-label">
@@ -67,24 +67,24 @@ svg{
 			<rect x="0" y="375" height="20" width="8.8"/>
 			<rect x="0" y="400" height="20" width="9.3"/>
 		</g>
-		<g>
-			<text x="0" y="45">80 and up</text>
-			<text x="0" y="70">75-79</text>
-			<text x="0" y="95">70-74</text>
-			<text x="0" y="120">65-69</text>
-			<text x="0" y="145">60-64</text>
-			<text x="0" y="170">55-59</text>
-			<text x="0" y="195">50-54</text>
-			<text x="0" y="220">45-49</text>
-			<text x="0" y="245">40-44</text>
-			<text x="0" y="270">35-39</text>
-			<text x="0" y="295">30-34</text>
-			<text x="0" y="320">25-29</text>
-			<text x="0" y="345">20-24</text>
-			<text x="0" y="370">15-19</text>
-			<text x="0" y="395">10-14</text>
-			<text x="0" y="420">5-9</text>
-			<text x="0" y="445">0-4</text>
+		<g class="bar-label">
+			<text x="90" y="45">80 and up</text>
+			<text x="90" y="70">75-79</text>
+			<text x="90" y="95">70-74</text>
+			<text x="90" y="120">65-69</text>
+			<text x="90" y="145">60-64</text>
+			<text x="90" y="170">55-59</text>
+			<text x="90" y="195">50-54</text>
+			<text x="90" y="220">45-49</text>
+			<text x="90" y="245">40-44</text>
+			<text x="90" y="270">35-39</text>
+			<text x="90" y="295">30-34</text>
+			<text x="90" y="320">25-29</text>
+			<text x="90" y="345">20-24</text>
+			<text x="90" y="370">15-19</text>
+			<text x="90" y="395">10-14</text>
+			<text x="90" y="420">5-9</text>
+			<text x="90" y="445">0-4</text>
 		</g>
 		<g transform="translate(100, 30)" stroke="black">
 			<line x1="0" y1="0" x2="0" y2="-10"/>
@@ -92,7 +92,7 @@ svg{
 			<line x1="215.5" y1="0" x2="215.5" y2="-10"/>
 			<line x1="323.25" y1="0" x2="323.25" y2="-10"/>
 		</g>
-		<g transform="translate(100, 30)" text-anchor="middle">
+		<g transform="translate(100, 30)" class="axis-label">
 			<text x="0" y="-15">0</text>
 			<text x="107.75" y="-15">2.5%</text>
 			<text x="215.5" y="-15">5.0%</text>
