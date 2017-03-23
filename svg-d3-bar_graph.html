@@ -78,45 +78,52 @@ $(document).ready(function(){
 		.attr("transform", translateText + " " + scaleText)
 		.attr("class", "bar");
 	
-	for(var i = 0; i < popData.length; i++){
-		barGroup.append("rect")
-				.attr("x", 0)
-				.attr("y", i*barSpacing)
-				.attr("height", barHeight)
-				.attr("width", popData[i]);
-	}
+	barGroup.selectAll("rect")
+			.data(popData)
+			.enter().append("rect")
+			.attr("x", 0)
+			.attr("y", function(d, i){ return i*barSpacing;})
+			.attr("width", function(d){ return d;})
+			.attr("height", barHeight);
 	
 	var barLabelGroup = svg.append("g")
 						.attr("transform", translateText)
 						.attr("class", "bar-label");
 	
-	for(var i = 0; i < barLabels.length; i++){
-		barLabelGroup.append("text")
-		.attr("x", -10)
-		.attr("y", i * barSpacing + barHeight * (2/3))
-		.text(barLabels[i]);
-	}
+	barLabelGroup.selectAll("text")
+					.data(barLabels)
+					.enter()
+					.append("text")
+					.attr("x", -10)
+					.attr("y", function(d, i){ return i*barSpacing + barHeight*(2/3);})
+					.text(function(d){return d;});
+					
 	
 	var axisTickGroup = svg.append("g")
 		.attr("transform", translateText)
 		.attr("stroke", "black");
 	
+	//여기서부터 오류 수정 
+	axisTickGroup.selectAll("line")
+				.data(axisData)
+				.enter()
+				.append("line")
+				.attr("x1", function(d){return d*scaleFactor;})
+				.attr("x2", function(d){return d*scaleFactor;})
+				.attr("y1", 0)
+				.attr("y2", -1*tickHeight);
+	
 	var axisLabelGroup = svg.append("g")
 							.attr("transform", translateText)
 							.attr("class", "axis-label");
 	
-	for(var i = 0; i < axisData.length; i++){
-		axisTickGroup.append("line")
-					.attr("x1", axisData[i] * scaleFactor)
-					.attr("x2", axisData[i] * scaleFactor)
-					.attr("y1", 0)
-					.attr("y2", -1*tickHeight);
-		
-		axisLabelGroup.append("text")
-		.attr("x", axisData[i] * scaleFactor)
-		.attr("y", -1*tickHeight + -1*tickGap)
-		.text(axisData[i] + "%");
-	}
+	axisLabelGroup.selectAll("text")
+				.data(axisData)
+				.enter()
+				.append("text")
+				.attr("x", function(d){return d*scaleFactor})
+				.attr("y", -1*tickHeight + -1*tickGap)
+				.text(function(d){return d + "%";});
 });
 </script>
 <title>Insert title here</title>
